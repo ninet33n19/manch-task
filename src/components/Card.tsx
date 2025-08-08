@@ -1,12 +1,12 @@
 import { ChartLineIcon } from "lucide-react";
-import { Change, CardVariant, type CardProps } from "./Card.types";
+import type { ReactNode } from "react";
 
 const cardStyles = {
-  [CardVariant.BLUE]: {
+  blue: {
     wrapper: "bg-[#DCE8FF] border-l-8 border-blue-600",
     iconWrapper: "bg-blue-600",
   },
-  [CardVariant.YELLOW]: {
+  yellow: {
     wrapper: "bg-[#F7F6CF] border-l-8 border-yellow-400",
     iconWrapper: "bg-yellow-400",
   },
@@ -19,8 +19,16 @@ export default function Card({
   periodText,
   icon,
   variant,
-  change = Change.UP,
-}: CardProps) {
+  change = "up",
+}: {
+  title: string;
+  value: string | number;
+  percentage: number;
+  periodText: string;
+  icon: ReactNode;
+  variant: "blue" | "yellow";
+  change?: "up" | "down";
+}) {
   const styles = cardStyles[variant];
 
   return (
@@ -33,7 +41,7 @@ export default function Card({
         <div className="flex w-fit items-center gap-1 rounded-md bg-[#CCFFB2] px-2 py-1">
           <ChartLineIcon className="h-4 w-4 text-black" />
           <span className="text-sm font-semibold text-black">
-            {change === Change.UP ? "+" : "-"}
+            {change === "up" ? "+" : "-"}
             {percentage}% {periodText}
           </span>
         </div>

@@ -7,7 +7,7 @@ import {
   DollarSign,
   Target,
 } from "lucide-react";
-import Card, { CardVariant } from "../components/Card";
+import Card from "../components/Card";
 import CaseAnalyticsChart from "../components/CaseAnalyticsChart";
 import CaseDistributionChart from "../components/CaseDistributionChart";
 import Footer from "../components/Footer";
@@ -37,7 +37,7 @@ export default function DashboardPage() {
           <div>
             <h1 className="font-serif text-7xl italic text-white">Dashboard</h1>
             <p className="mt-2 text-lg text-gray-300">
-              Welcome back! Here’s what’s happening today.
+              Welcome back! Here's what's happening today.
             </p>
           </div>
           <div className="flex shrink-0 gap-4 mt-auto mb-3.5">
@@ -58,7 +58,7 @@ export default function DashboardPage() {
               value={138}
               percentage={25}
               periodText="this month"
-              variant={CardVariant.BLUE}
+              variant="blue"
               icon={<Folder className="h-8 w-8 text-white" />}
             />
             <Card
@@ -66,7 +66,7 @@ export default function DashboardPage() {
               value={267}
               percentage={12}
               periodText="this month"
-              variant={CardVariant.YELLOW}
+              variant="yellow"
               icon={<Users className="h-8 w-8 text-white" />}
             />
             <Card
@@ -74,7 +74,7 @@ export default function DashboardPage() {
               value="$ 3.2M"
               percentage={8}
               periodText="vs last year"
-              variant={CardVariant.BLUE}
+              variant="blue"
               icon={<DollarSign className="h-8 w-8 text-white" />}
             />
             <Card
@@ -82,7 +82,7 @@ export default function DashboardPage() {
               value="94%"
               percentage={2}
               periodText="improvement"
-              variant={CardVariant.YELLOW}
+              variant="yellow"
               icon={<Target className="h-8 w-8 text-white" />}
             />
           </section>
