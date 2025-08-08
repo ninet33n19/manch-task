@@ -1,25 +1,5 @@
 import { ChartLineIcon } from "lucide-react";
-import type { ReactNode } from "react";
-
-export enum Change {
-  UP = "up",
-  DOWN = "down",
-}
-
-export enum CardVariant {
-  BLUE = "blue",
-  YELLOW = "yellow",
-}
-
-type CardProps = {
-  title: string;
-  value: string | number;
-  percentage: number;
-  periodText: string;
-  icon: ReactNode;
-  variant: CardVariant;
-  change?: Change;
-};
+import { Change, CardVariant, type CardProps } from "./Card.types";
 
 const cardStyles = {
   [CardVariant.BLUE]: {
